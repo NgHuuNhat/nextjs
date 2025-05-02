@@ -6,7 +6,6 @@ export default function AboutPage() {
     <div>
       <h1>Giới thiệu về chúng tôi</h1>
       <p>Đây là trang Giới thiệu về công ty chúng tôi.</p>
-
       <nav>
         <ul>
           <li><Link href="/about/tsx1">Trang 1 - Thông tin sản phẩm</Link></li>

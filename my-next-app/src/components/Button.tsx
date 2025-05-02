@@ -10,7 +10,7 @@ export default function Button(
   return (
     <button
       onClick={onClick}
-      style={{ padding: "0.5rem 1rem", margin: "1rem 0" }} className="cursor-pointer bg-red-200 rounded-full text-gray-500"
+      style={{ padding: "0.5rem 1rem", margin: "1rem 0" }} className="cursor-pointer bg-red-500 rounded-full"
     >
       {label}
     </button>
