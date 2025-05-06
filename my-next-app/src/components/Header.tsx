@@ -6,7 +6,7 @@ export default function Header() {
   return (
     <header style={{ padding: "1rem", background: "#eee" }}>
       <nav>
-        <Link href="/">Home</Link> | <Link href="/category">Category</Link>
+        <Link href="/">Home</Link> | <Link href="/category">Category</Link> | <Link href="/product">Product</Link>
       </nav>
     </header>
   );

@@ -1,5 +1,3 @@
-import axios from "axios";
-
 export async function getCategories() {
     try {
         const res = await fetch("http://localhost:3000/api/category");

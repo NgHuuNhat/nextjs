@@ -1,4 +1,3 @@
-// src/app/category/api/route.ts
 import { NextRequest, NextResponse } from 'next/server';
 
 const categories = [
@@ -7,7 +6,6 @@ const categories = [
     { id: 3, name: 'Category 3' },
 ];
 
-// GET: Lấy tất cả các category
 export async function GET() {
     return NextResponse.json(categories);
 }
