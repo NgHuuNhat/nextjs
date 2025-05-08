@@ -3,7 +3,7 @@ import { ChevronDown } from "lucide-react";
 
 export default function ProductSort() {
   return (
-    <div className="">
+    <div className="w-full md:w-35">
       <Select
         style={{ width: '100%' }}
         defaultValue="lucy"

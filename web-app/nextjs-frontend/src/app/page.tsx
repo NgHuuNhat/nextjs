@@ -5,10 +5,7 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    // <div className="min-h-screen flex flex-col">
-    <main
-    // className="flex-grow"
-    >
+    <main>
       <section>
         <Image src="/svg-laptop/Banner.svg" alt="Banner" width={0} height={0} sizes="100vw" className="hidden md:block w-full h-auto object-cover" />
         <Image src="/svg-mobile/Banner.svg" alt="Banner" width={0} height={0} sizes="100vw" className="md:hidden w-full h-auto object-cover" />
@@ -38,6 +35,5 @@ export default function Home() {
         {/* <Image src="/svg-mobile/Banner.svg" alt="Banner" width={0} height={0} sizes="100vw" className="md:hidden w-full h-auto object-cover" /> */}
       </section>
     </main>
-    // </div>
   );
 }

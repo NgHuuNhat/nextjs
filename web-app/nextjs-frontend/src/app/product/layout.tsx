@@ -4,7 +4,7 @@ import ProductBreadcrumb from "./components/ProductBreadcrumb";
 
 export default function layout({ children }: { children: ReactNode }) {
     return (
-        <main className="px-4">
+        <main className="px-4 xl:container xl:mx-auto">
             <div className="">
                 <ProductBreadcrumb />
             </div>
