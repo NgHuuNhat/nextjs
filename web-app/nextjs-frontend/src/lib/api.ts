@@ -1,7 +1,7 @@
 export const API_URL = 'http://localhost:1337'
 
 export async function getProducts() {
-    const res = await fetch(`${API_URL}/api/products?populate=image`, {
+    const res = await fetch(`${API_URL}/api/products?populate=*`, {
         next: { revalidate: 60 }, // ISR
     });
     const json = await res.json();
@@ -9,7 +9,7 @@ export async function getProducts() {
 }
 
 export async function getProductBySlug(slug: string) {
-    const res = await fetch(`${API_URL}/api/products?filters[slug][$eq]=${slug}&populate=image`, {
+    const res = await fetch(`${API_URL}/api/products?filters[slug][$eq]=${slug}&populate=*`, {
         next: { revalidate: 60 },
     });
     const json = await res.json();
