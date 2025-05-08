@@ -10,47 +10,76 @@ export default function Header() {
 
     return (
         <header className="bg-white border-b border-gray-100">
-            <div className="flex items-center justify-between px-4 md:px-8 py-4">
-                {/* Logo */}
-                <Link href="/" className="text-xl font-bold">
-                    {/* <span className="text-black">7</span>
+            <div className='container mx-auto px-4'>
+                <div className="flex items-center justify-between py-4 md:gap-10">
+                    {/* Logo */}
+                    <Link href="/" className="text-xl font-bold">
+                        {/* <span className="text-black">7</span>
                     <span className="text-gray-500">cyber</span> */}
-                    <Image src="/next.svg" alt="Next.js Logo" width={100} height={100} />
-                </Link>
+                        <Image src="/next.svg" alt="Next.js Logo" width={100} height={100} />
+                    </Link>
 
-                {/* Search */}
-                <div className="flex-1 max-w-lg mx-4 hidden md:block">
-                    <div className="flex items-center px-3 py-2 bg-gray-100 rounded">
-                        <Search className="w-4 h-4 text-gray-500" />
-                        <input type="text" placeholder="Search" className="ml-2 w-full outline-none text-sm" />
+                    {/* Search */}
+                    <div className="flex-1 max-w-lg mx-4 hidden md:block">
+                        <div className="flex items-center px-3 py-2 bg-gray-100 rounded">
+                            <Search className="w-4 h-4 text-gray-500" />
+                            <input type="text" placeholder="Search" className="ml-2 w-full outline-none text-sm" />
+                        </div>
                     </div>
+
+                    {/* NavItems */}
+                    <nav className="hidden lg:flex md:flex-1 justify-between w-full gap-10 text-sm text-gray-700">
+                        <div className='md:flex md:gap-0 lg:gap-5 xl:gap-10'>
+                            <Link href="/product" className='font-bold'>Home</Link>
+                            <Link href="#">About</Link>
+                            <Link href="#">Contact Us</Link>
+                            <Link href="#">Blog</Link>
+                        </div>
+                        <div className="flex items-center gap-4 md:gap-0 lg:gap-5 xl:gap-10">
+                            <Link href="#"><Heart className="w-5 h-5 cursor-pointer" /></Link>
+                            <div className="relative">
+                                <Link href="#">
+                                    <ShoppingCart className="w-5 h-5 cursor-pointer" />
+                                </Link>
+                                <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-4 h-4 flex items-center justify-center rounded-full">
+                                    10
+                                </span>
+                            </div>
+                            {/* <Link href="#"><ShoppingCart className="w-5 h-5 cursor-pointer" /></Link> */}
+                            <Link href="#"><User className="w-5 h-5 cursor-pointer" /></Link>
+                        </div>
+                    </nav>
+
+                    {/* Mobile menu button */}
+                    <div className='lg:hidden flex gap-6'>
+                        <div className="flex items-center gap-6">
+                            <Link href="#"><Heart className="w-5 h-5 cursor-pointer" /></Link>
+                            <div className="relative">
+                                <Link href="#">
+                                    <ShoppingCart className="w-5 h-5 mx-0 my-0" />
+                                </Link>
+                                <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-4 h-4 flex items-center justify-center rounded-full">
+                                    10
+                                </span>
+                            </div>
+                            {/* <Link href="#"><ShoppingCart className="w-5 h-5 cursor-pointer" /></Link> */}
+                            <Link href="#"><User className="w-5 h-5 cursor-pointer" /></Link>
+                        </div>
+                        <button className="lg:hidden" onClick={() => setOpen(!open)}>
+                            <Menu className="w-6 h-6" />
+                        </button>
+                    </div>
+
                 </div>
 
-                {/* NavItems */}
-                <nav className="hidden lg:flex gap-6 text-sm text-gray-700">
-                    <Link href="/product">Shop</Link>
-                    <Link href="#">About</Link>
-                    <Link href="#">Contact</Link>
-                    <div className="flex items-center gap-4">
-                        <Link href="#"><Heart className="w-5 h-5 cursor-pointer" /></Link>
-                        <Link href="#"><ShoppingCart className="w-5 h-5 cursor-pointer" /></Link>
-                        <Link href="#"><User className="w-5 h-5 cursor-pointer" /></Link>
-                    </div>
-                </nav>
-
-                {/* Mobile menu button */}
-                <button className="lg:hidden" onClick={() => setOpen(!open)}>
-                    <Menu className="w-6 h-6" />
-                </button>
-            </div>
-
-            {/* Subnav */}
-            <div className="hidden bg-gray-100 text-sm text-gray-800 px-4 md:px-8 py-2 flex flex-wrap gap-4 justify-center">
-                {['Phones', 'Laptops', 'Headphones', 'Cameras', 'Watches'].map(item => (
-                    <Link href="#" key={item} className="hover:underline">
-                        {item}
-                    </Link>
-                ))}
+                {/* Subnav */}
+                {/* <div className="hidden bg-gray-100 text-sm text-gray-800 px-4 md:px-8 py-2 flex flex-wrap gap-4 justify-center">
+                    {['Phones', 'Laptops', 'Headphones', 'Cameras', 'Watches'].map(item => (
+                        <Link href="#" key={item} className="hover:underline">
+                            {item}
+                        </Link>
+                    ))}
+                </div> */}
             </div>
 
             {/* Header mobile */}
@@ -70,14 +99,10 @@ export default function Header() {
 
                     {/* NavItems (reused) */}
                     <nav className="flex flex-col gap-8 text-sm text-gray-700">
-                        <Link href="/product">Shop</Link>
+                        <Link href="/product">Home</Link>
                         <Link href="#">About</Link>
-                        <Link href="#">Contact</Link>
-                        <div className="grid items-center gap-8">
-                            <Link href="#"><Heart className="w-5 h-5 cursor-pointer" /></Link>
-                            <Link href="#"><ShoppingCart className="w-5 h-5 cursor-pointer" /></Link>
-                            <Link href="#"><User className="w-5 h-5 cursor-pointer" /></Link>
-                        </div>
+                        <Link href="#">Contact Us</Link>
+                        <Link href="#">Blog</Link>
                     </nav>
 
                     {/* Subnav (reused) */}
