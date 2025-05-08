@@ -11,13 +11,13 @@ export default async function ProductPage() {
     <div className="grid grid-cols-1 md:grid-cols-[250px_1fr] md:gap-6">
 
       {/* mobile */}
-      <div className="hidden md:hidden my-10">
+      <div className="md:hidden my-10">
         <div className="flex justify-between items-start gap-4">
           <div className="w-50"><ProductFilter /></div>
           <div className="w-50"><ProductSort /></div>
         </div>
       </div>
-      <div className="md:hidden text-sm my-5">
+      <div className="md:hidden text-sm mb-5">
         <span className="text-gray-400">Selected Products: </span>
         <span className="font-bold">{products.length}</span>
       </div>

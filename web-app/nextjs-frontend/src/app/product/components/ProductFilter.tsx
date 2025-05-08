@@ -1,4 +1,5 @@
 'use client'
+import { Button } from 'antd';
 import { ChevronRight, Search, Filter } from 'lucide-react';
 import { useState } from 'react';
 
@@ -31,18 +32,22 @@ export default function ProductFilter() {
   return (
     <div>
       {/* Nút mở filter chỉ hiện trên mobile */}
-      <button
-        onClick={() => setShowMobileFilter(!showMobileFilter)}
-        className="w-full flex items-center justify-between gap-2 md:hidden border border-gray-200 px-3 py-2 rounded mb-0 text-sm"
-      >
-        Filters
-        <Filter className="w-4 h-4" />
-      </button>
+      <div className='md:hidden'>
+        <Button
+          onClick={() => setShowMobileFilter(!showMobileFilter)}
+          type="default"
+          style={{ width: '100%' }}
+        >
+          Filters
+          <Filter className="w-4 h-4" />
+        </Button>
+      </div>
 
       {/* Phần bộ lọc - hiện trên desktop hoặc khi mở ở mobile */}
       <aside className={`space-y-4 ${showMobileFilter ? '' : 'hidden'} md:block`}>
         {items.map((item, index) => (
-          <div key={item} className="">
+          <div key={item} className="mt-5 md:mt-0">
+
             <button
               onClick={() => handleToggle(index)}
               className="pb-2 text-sm border-b border-gray-100 w-full text-left font-bold text-lg cursor-pointer list-none flex justify-between items-center"
