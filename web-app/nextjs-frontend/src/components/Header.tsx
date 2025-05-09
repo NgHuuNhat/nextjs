@@ -1,120 +1,125 @@
 'use client'
 
-import { useState } from 'react'
 import Link from 'next/link'
-import { Heart, Menu, Search, ShoppingCart, User } from 'lucide-react'
+import { Heart, Home, Info, Menu, Newspaper, Phone, Search, ShoppingCart, User } from 'lucide-react'
 import Image from 'next/image'
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+} from "@/components/ui/sheet"
+
 
 export default function Header() {
-    const [open, setOpen] = useState(false)
+  return (
+    <header className="bg-white border-b border-gray-100">
+      <div className='container mx-auto px-4'>
+        <div className="flex items-center justify-between py-4 md:gap-10">
+          {/* Logo */}
+          <Link href="/" className="text-xl font-bold">
+            <Image src="/next.svg" alt="Next.js Logo" width={100} height={100} />
+          </Link>
 
-    return (
-        <header className="bg-white border-b border-gray-100">
-            <div className='container mx-auto px-4'>
-                <div className="flex items-center justify-between py-4 md:gap-10">
-                    {/* Logo */}
-                    <Link href="/" className="text-xl font-bold">
-                        {/* <span className="text-black">7</span>
-                    <span className="text-gray-500">cyber</span> */}
-                        <Image src="/next.svg" alt="Next.js Logo" width={100} height={100} />
-                    </Link>
+          {/* Search */}
+          <div className="flex-1 max-w-lg mx-4 hidden md:block">
+            <div className="flex items-center px-3 py-2 bg-gray-100 rounded">
+              <Search className="w-4 h-4 text-gray-500" />
+              <input type="text" placeholder="Search" className="ml-2 w-full outline-none text-sm" autoFocus={false} />
+            </div>
+          </div>
 
-                    {/* Search */}
-                    <div className="flex-1 max-w-lg mx-4 hidden md:block">
-                        <div className="flex items-center px-3 py-2 bg-gray-100 rounded">
-                            <Search className="w-4 h-4 text-gray-500" />
-                            <input type="text" placeholder="Search" className="ml-2 w-full outline-none text-sm" />
-                        </div>
-                    </div>
+          {/* NavItems desktop */}
+          <nav className="hidden xl:flex md:flex-1 justify-between w-full gap-10 text-sm text-gray-700">
+            <div className='md:flex md:gap-2 lg:gap-4 xl:gap-8 2xl:gap-10'>
+              <Link href="/product" className="flex items-center gap-1">
+                <Home className="w-4 h-4" />
+                Home
+              </Link>
+              <Link href="#" className="flex items-center gap-1">
+                <Info className="w-4 h-4" />
+                About
+              </Link>
+              <Link href="#" className="flex items-center gap-1">
+                <Phone className="w-4 h-4" />
+                Contact Us
+              </Link>
+              <Link href="#" className="flex items-center gap-1">
+                <Newspaper className="w-4 h-4" />
+                Blog
+              </Link>
+            </div>
+            <div className="flex items-center gap-4 md:gap-0 lg:gap-6 2xl:gap-10">
+              <Link href="#"><Heart className="w-5 h-5 cursor-pointer" /></Link>
+              <div className="relative">
+                <Link href="#">
+                  <ShoppingCart className="w-5 h-5 cursor-pointer" />
+                </Link>
+                <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-4 h-4 flex items-center justify-center rounded-full">
+                  10
+                </span>
+              </div>
+              <Link href="#"><User className="w-5 h-5 cursor-pointer" /></Link>
+            </div>
+          </nav>
 
-                    {/* NavItems */}
-                    <nav className="hidden lg:flex md:flex-1 justify-between w-full gap-10 text-sm text-gray-700">
-                        <div className='md:flex md:gap-0 lg:gap-5 xl:gap-10'>
-                            <Link href="/product" className='font-bold'>Home</Link>
-                            <Link href="#">About</Link>
-                            <Link href="#">Contact Us</Link>
-                            <Link href="#">Blog</Link>
-                        </div>
-                        <div className="flex items-center gap-4 md:gap-0 lg:gap-5 xl:gap-10">
-                            <Link href="#"><Heart className="w-5 h-5 cursor-pointer" /></Link>
-                            <div className="relative">
-                                <Link href="#">
-                                    <ShoppingCart className="w-5 h-5 cursor-pointer" />
-                                </Link>
-                                <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-4 h-4 flex items-center justify-center rounded-full">
-                                    10
-                                </span>
-                            </div>
-                            {/* <Link href="#"><ShoppingCart className="w-5 h-5 cursor-pointer" /></Link> */}
-                            <Link href="#"><User className="w-5 h-5 cursor-pointer" /></Link>
-                        </div>
-                    </nav>
-
-                    {/* Mobile menu button */}
-                    <div className='lg:hidden flex gap-6'>
-                        <div className="flex items-center gap-6">
-                            <Link href="#"><Heart className="w-5 h-5 cursor-pointer" /></Link>
-                            <div className="relative">
-                                <Link href="#">
-                                    <ShoppingCart className="w-5 h-5 mx-0 my-0" />
-                                </Link>
-                                <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-4 h-4 flex items-center justify-center rounded-full">
-                                    10
-                                </span>
-                            </div>
-                            {/* <Link href="#"><ShoppingCart className="w-5 h-5 cursor-pointer" /></Link> */}
-                            <Link href="#"><User className="w-5 h-5 cursor-pointer" /></Link>
-                        </div>
-                        <button className="lg:hidden" onClick={() => setOpen(!open)}>
-                            <Menu className="w-6 h-6" />
-                        </button>
-                    </div>
-
+          {/* Mobile Icons + Trigger */}
+          {/* Mobile Icons + Trigger */}
+          <Sheet>
+            <div className="xl:hidden flex gap-6 items-center">
+              <div className="flex items-center gap-6">
+                <Link href="#"><Heart className="w-5 h-5 cursor-pointer" /></Link>
+                <div className="relative">
+                  <Link href="#">
+                    <ShoppingCart className="w-5 h-5 mx-0 my-0" />
+                  </Link>
+                  <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-4 h-4 flex items-center justify-center rounded-full">
+                    10
+                  </span>
                 </div>
-
-                {/* Subnav */}
-                {/* <div className="hidden bg-gray-100 text-sm text-gray-800 px-4 md:px-8 py-2 flex flex-wrap gap-4 justify-center">
-                    {['Phones', 'Laptops', 'Headphones', 'Cameras', 'Watches'].map(item => (
-                        <Link href="#" key={item} className="hover:underline">
-                            {item}
-                        </Link>
-                    ))}
-                </div> */}
+                <Link href="#"><User className="w-5 h-5 cursor-pointer" /></Link>
+              </div>
+              <SheetTrigger asChild>
+                <button className="xl:hidden outline-none ring-0 focus:ring-0 focus:outline-none focus-visible:ring-0 focus-visible:outline-none" tabIndex={-1}>
+                  <Menu className="w-6 h-6" />
+                </button>
+              </SheetTrigger>
             </div>
 
-            {/* Header mobile */}
-            <div
-                className={`lg:hidden transition-all duration-300 ease-out overflow-hidden
-                ${open ? 'max-h-[1000px] opacity-100 translate-y-0 pointer-events-auto' : 'max-h-0 opacity-0 -translate-y-2 pointer-events-none'}
-              `}
-            >
-                <div className="lg:hidden px-4 py-4 space-y-4 grid gap-5">
-                    {/* Search (reused) */}
-                    <div className="block md:hidden">
-                        <div className="flex items-center bg-gray-100 rounded px-3 py-2">
-                            <Search className="w-4 h-4 text-gray-500" />
-                            <input type="text" placeholder="Search" className="ml-2 w-full outline-none" />
-                        </div>
-                    </div>
-
-                    {/* NavItems (reused) */}
-                    <nav className="flex flex-col gap-8 text-sm text-gray-700">
-                        <Link href="/product">Home</Link>
-                        <Link href="#">About</Link>
-                        <Link href="#">Contact Us</Link>
-                        <Link href="#">Blog</Link>
-                    </nav>
-
-                    {/* Subnav (reused) */}
-                    <div className="hidden bg-gray-100 text-sm text-gray-800 px-4 md:px-8 py-2 flex flex-wrap gap-4 justify-center">
-                        {['Phones', 'Laptops', 'Headphones', 'Cameras', 'Watches'].map(item => (
-                            <Link href="#" key={item} className="hover:underline">
-                                {item}
-                            </Link>
-                        ))}
-                    </div>
+            <SheetContent side="right" className="w-64 px-2">
+              <div className="space-y-4 mt-4">
+                {/* Search */}
+                <div className="block xl:hidden my-10">
+                  <div className="flex items-center bg-gray-100 rounded px-3 py-3">
+                    <Search className="w-4 h-4 text-gray-500" />
+                    <input type="text" placeholder="Search" className="ml-2 w-full outline-none" autoFocus={false} tabIndex={-1}/>
+                  </div>
                 </div>
-            </div>
-        </header>
-    )
+
+                {/* NavItems */}
+                <nav className="flex flex-col gap-2 text-sm text-gray-700">
+                  <Link href="/product" className="flex items-center gap-2 bg-gray-100 px-3 py-4 rounded">
+                    <Home className="w-4 h-4" />
+                    Home
+                  </Link>
+                  <Link href="#" className="flex items-center gap-2 bg-gray-100 px-3 py-4 rounded">
+                    <Info className="w-4 h-4" />
+                    About
+                  </Link>
+                  <Link href="#" className="flex items-center gap-2 bg-gray-100 px-3 py-4 rounded">
+                    <Phone className="w-4 h-4" />
+                    Contact Us
+                  </Link>
+                  <Link href="#" className="flex items-center gap-2 bg-gray-100 px-3 py-4 rounded">
+                    <Newspaper className="w-4 h-4" />
+                    Blog
+                  </Link>
+                </nav>
+              </div>
+            </SheetContent>
+          </Sheet>
+
+        </div>
+      </div>
+    </header>
+  )
 }
