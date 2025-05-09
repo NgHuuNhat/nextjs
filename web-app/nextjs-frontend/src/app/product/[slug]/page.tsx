@@ -118,7 +118,7 @@ export default async function ProductDetailPage({ params }: { params: { slug: st
             </section>
 
             {/* Reviews */}
-            <section className="space-y-6 w-1/2">
+            <section className="space-y-6 lg:w-1/2">
                 <h2 className="text-2xl font-semibold">Reviews</h2>
                 <div className="flex space-x-6">
                     <div className="text-center">
