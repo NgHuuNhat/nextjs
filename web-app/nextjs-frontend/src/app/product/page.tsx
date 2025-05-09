@@ -29,7 +29,7 @@ export default async function ProductPage() {
       </div>
 
       <div className="">
-        <div className="hidden lg:flex items-center justify-between mb-6">
+        <div className="hidden lg:flex items-center justify-between my-2 mb-4">
           <div className="text-sm">
             <span className="text-gray-400">Selected Products: </span>
             <span className="font-bold">{products.length}</span>

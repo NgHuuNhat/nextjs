@@ -54,13 +54,13 @@ export default function ProductFilter() {
 // 👉 Tách phần Accordion thành component để dùng cả mobile và desktop
 function FilterAccordion() {
   return (
-    <Accordion type="multiple" defaultValue={['item-0']} className="space-y-4 xl:px-0 overflow-y-auto my-12 lg:my-0">
+    <Accordion type="multiple" defaultValue={['item-0']} className="space-y-4 xl:px-0 overflow-y-auto my-14 lg:my-0">
       {items.map((item, index) => (
         <AccordionItem key={item} value={`item-${index}`}>
           <AccordionTrigger className="bg-gray-100 px-2 mb-2 cursor-pointer text-sm font-medium hover:no-underline">
             {item}
           </AccordionTrigger>
-          <AccordionContent className="px-2 transition-all duration-300 ease-out">
+          <AccordionContent className="transition-all duration-300 ease-out">
             <div className="text-sm text-gray-500">
               <div className="flex items-center px-3 py-1 mb-2 bg-gray-100 rounded">
                 <Search className="w-4 h-4 text-gray-500" />
@@ -70,7 +70,7 @@ function FilterAccordion() {
                   className="w-full outline-none px-3 py-1 bg-transparent"
                 />
               </div>
-              <div className="space-y-2">
+              <div className="space-y-2 px-2">
                 {brands.map((brand) => (
                   <div key={brand} className="flex items-center gap-2">
                     <input type="checkbox" id={`${item}-${brand}`} className="cursor-pointer" />
