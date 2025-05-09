@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { Heart, Home, Info, Menu, Newspaper, Package, Phone, Search, ShoppingCart, User } from 'lucide-react'
+import { Heart, Home, Info, Menu, Newspaper, Package, Phone, Search, ShoppingBag, ShoppingCart, User } from 'lucide-react'
 import Image from 'next/image'
 import {
   Sheet,
@@ -31,19 +31,19 @@ export default function Header() {
           {/* NavItems desktop */}
           <nav className="hidden xl:flex md:flex-1 justify-between w-full gap-10 text-sm text-gray-700">
             <div className='md:flex md:gap-2 lg:gap-4 xl:gap-8 2xl:gap-10'>
-              <Link href="/" className="flex items-center gap-1 font-bold bg-red-100 p-1 rounded">
+              <Link href="/" className="flex items-center gap-1 text-gray-400">
                 <Home className="w-4 h-4" />
                 Home
               </Link>
-              <Link href="/product" className="flex items-center gap-1">
-                <Package className="w-4 h-4" />
+              <Link href="/product" className="flex items-center gap-1 font-bold ">
+                <ShoppingBag className="w-4 h-4" />
                 Shopping
               </Link>
-              <Link href="#" className="flex items-center gap-1">
+              <Link href="#" className="flex items-center gap-1 text-gray-400">
                 <Info className="w-4 h-4" />
                 About
               </Link>
-              <Link href="#" className="flex items-center gap-1">
+              <Link href="#" className="flex items-center gap-1 text-gray-400">
                 <Phone className="w-4 h-4" />
                 Contact
               </Link>
@@ -101,7 +101,7 @@ export default function Header() {
                     Home
                   </Link>
                   <Link href="/product" className="flex items-center gap-2 bg-gray-100 px-3 py-4 rounded">
-                    <Package className="w-4 h-4" />
+                    <ShoppingBag className="w-4 h-4" />
                     Shopping
                   </Link>
                   <Link href="#" className="flex items-center gap-2 bg-gray-100 px-3 py-4 rounded">
