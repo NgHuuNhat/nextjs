@@ -29,7 +29,7 @@ export default async function ProductDetailPage({ params }: { params: { slug: st
                 {/* Left: Product Images */}
                 <div className="space-y-4">
                     <img src={_image} alt="iPhone" className="w-100 mx-auto rounded-xl" />
-                    <div className="flex space-x-3 bg-red-100 items-center justify-center">
+                    <div className="flex space-x-3 items-center justify-center">
                         {['1', '2', '3', '4', '5'].map((i) => (
                             // <img key={i} src={`/thumb-${i}.png`} className="w-16 h-16 rounded-lg border" />
                             <img key={i} src={_image} className="w-16 h-16 rounded-lg border" />
