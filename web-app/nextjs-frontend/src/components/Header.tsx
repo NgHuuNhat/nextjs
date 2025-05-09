@@ -49,7 +49,15 @@ export default function Header() {
               </Link>
             </div>
             <div className="flex items-center gap-4 md:gap-0 lg:gap-6 2xl:gap-10">
-              <Link href="#"><Heart className="w-5 h-5 cursor-pointer" /></Link>
+              {/* <Link href="#"><Heart className="w-5 h-5 cursor-pointer" /></Link> */}
+              <div className="relative">
+                <Link href="#">
+                  <Heart className="w-5 h-5 cursor-pointer" />
+                </Link>
+                <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-4 h-4 flex items-center justify-center rounded-full">
+                  5
+                </span>
+              </div>
               <div className="relative">
                 <Link href="#">
                   <ShoppingCart className="w-5 h-5 cursor-pointer" />
@@ -66,7 +74,15 @@ export default function Header() {
           <Sheet>
             <div className="xl:hidden flex gap-6 items-center">
               <div className="flex items-center gap-6">
-                <Link href="#"><Heart className="w-5 h-5 cursor-pointer" /></Link>
+                {/* <Link href="#"><Heart className="w-5 h-5 cursor-pointer" /></Link> */}
+                <div className="relative">
+                  <Link href="#">
+                    <Heart className="w-5 h-5 mx-0 my-0" />
+                  </Link>
+                  <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-4 h-4 flex items-center justify-center rounded-full">
+                    5
+                  </span>
+                </div>
                 <div className="relative">
                   <Link href="#">
                     <ShoppingCart className="w-5 h-5 mx-0 my-0" />
