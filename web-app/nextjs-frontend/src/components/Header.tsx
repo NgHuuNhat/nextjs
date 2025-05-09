@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { Heart, Home, Info, Menu, Newspaper, Phone, Search, ShoppingCart, User } from 'lucide-react'
+import { Heart, Home, Info, Menu, Newspaper, Package, Phone, Search, ShoppingCart, User } from 'lucide-react'
 import Image from 'next/image'
 import {
   Sheet,
@@ -31,9 +31,13 @@ export default function Header() {
           {/* NavItems desktop */}
           <nav className="hidden xl:flex md:flex-1 justify-between w-full gap-10 text-sm text-gray-700">
             <div className='md:flex md:gap-2 lg:gap-4 xl:gap-8 2xl:gap-10'>
-              <Link href="/product" className="flex items-center gap-1">
+              <Link href="/" className="flex items-center gap-1 font-bold bg-red-100 p-1 rounded">
                 <Home className="w-4 h-4" />
                 Home
+              </Link>
+              <Link href="/product" className="flex items-center gap-1">
+                <Package className="w-4 h-4" />
+                Shopping
               </Link>
               <Link href="#" className="flex items-center gap-1">
                 <Info className="w-4 h-4" />
@@ -41,11 +45,7 @@ export default function Header() {
               </Link>
               <Link href="#" className="flex items-center gap-1">
                 <Phone className="w-4 h-4" />
-                Contact Us
-              </Link>
-              <Link href="#" className="flex items-center gap-1">
-                <Newspaper className="w-4 h-4" />
-                Blog
+                Contact
               </Link>
             </div>
             <div className="flex items-center gap-4 md:gap-0 lg:gap-6 2xl:gap-10">
@@ -62,7 +62,6 @@ export default function Header() {
             </div>
           </nav>
 
-          {/* Mobile Icons + Trigger */}
           {/* Mobile Icons + Trigger */}
           <Sheet>
             <div className="xl:hidden flex gap-6 items-center">
@@ -91,15 +90,19 @@ export default function Header() {
                 <div className="block xl:hidden my-10">
                   <div className="flex items-center bg-gray-100 rounded px-3 py-3">
                     <Search className="w-4 h-4 text-gray-500" />
-                    <input type="text" placeholder="Search" className="ml-2 w-full outline-none" autoFocus={false} tabIndex={-1}/>
+                    <input type="text" placeholder="Search" className="ml-2 w-full outline-none" autoFocus={false} tabIndex={-1} />
                   </div>
                 </div>
 
                 {/* NavItems */}
                 <nav className="flex flex-col gap-2 text-sm text-gray-700">
-                  <Link href="/product" className="flex items-center gap-2 bg-gray-100 px-3 py-4 rounded">
+                  <Link href="/" className="flex items-center gap-2 bg-gray-100 px-3 py-4 rounded">
                     <Home className="w-4 h-4" />
                     Home
+                  </Link>
+                  <Link href="/product" className="flex items-center gap-2 bg-gray-100 px-3 py-4 rounded">
+                    <Package className="w-4 h-4" />
+                    Shopping
                   </Link>
                   <Link href="#" className="flex items-center gap-2 bg-gray-100 px-3 py-4 rounded">
                     <Info className="w-4 h-4" />
@@ -108,10 +111,6 @@ export default function Header() {
                   <Link href="#" className="flex items-center gap-2 bg-gray-100 px-3 py-4 rounded">
                     <Phone className="w-4 h-4" />
                     Contact Us
-                  </Link>
-                  <Link href="#" className="flex items-center gap-2 bg-gray-100 px-3 py-4 rounded">
-                    <Newspaper className="w-4 h-4" />
-                    Blog
                   </Link>
                 </nav>
               </div>
