@@ -7,6 +7,7 @@ import {
   Sheet,
   SheetContent,
   SheetTrigger,
+  SheetClose
 } from "@/components/ui/sheet"
 
 
@@ -59,7 +60,7 @@ export default function Header() {
                 </span>
               </div>
               <div className="relative">
-                <Link href="#">
+                <Link href="/cart">
                   <ShoppingCart className="w-5 h-5 cursor-pointer" />
                 </Link>
                 <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-4 h-4 flex items-center justify-center rounded-full">
@@ -84,7 +85,7 @@ export default function Header() {
                   </span>
                 </div>
                 <div className="relative">
-                  <Link href="#">
+                  <Link href="/cart">
                     <ShoppingCart className="w-5 h-5 mx-0 my-0" />
                   </Link>
                   <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-4 h-4 flex items-center justify-center rounded-full">
@@ -93,8 +94,10 @@ export default function Header() {
                 </div>
                 <Link href="#"><User className="w-5 h-5 cursor-pointer" /></Link>
               </div>
+
+              {/* button menu */}
               <SheetTrigger asChild>
-                <button className="xl:hidden outline-none ring-0 focus:ring-0 focus:outline-none focus-visible:ring-0 focus-visible:outline-none" tabIndex={-1}>
+                <button className="cursor-pointer xl:hidden outline-none ring-0 focus:ring-0 focus:outline-none focus-visible:ring-0 focus-visible:outline-none" tabIndex={-1}>
                   <Menu className="w-6 h-6" />
                 </button>
               </SheetTrigger>
@@ -129,6 +132,35 @@ export default function Header() {
                     Contact Us
                   </Link>
                 </nav>
+                {/* <nav className="flex flex-col gap-2 text-sm text-gray-700">
+                  <SheetClose asChild>
+                    <Link href="/" className="flex items-center gap-2 bg-gray-100 px-3 py-4 rounded">
+                      <Home className="w-4 h-4" />
+                      Home
+                    </Link>
+                  </SheetClose>
+
+                  <SheetClose asChild>
+                    <Link href="/product" className="flex items-center gap-2 bg-gray-100 px-3 py-4 rounded">
+                      <ShoppingBag className="w-4 h-4" />
+                      Shopping
+                    </Link>
+                  </SheetClose>
+
+                  <SheetClose asChild>
+                    <Link href="/about" className="flex items-center gap-2 bg-gray-100 px-3 py-4 rounded">
+                      <Info className="w-4 h-4" />
+                      About
+                    </Link>
+                  </SheetClose>
+
+                  <SheetClose asChild>
+                    <Link href="/contact" className="flex items-center gap-2 bg-gray-100 px-3 py-4 rounded">
+                      <Phone className="w-4 h-4" />
+                      Contact Us
+                    </Link>
+                  </SheetClose>
+                </nav> */}
               </div>
             </SheetContent>
           </Sheet>

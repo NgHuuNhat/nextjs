@@ -41,7 +41,7 @@ export default async function ProductDetailPage({ params }: { params: { slug: st
                 <div className="space-y-4">
                     <h1 className="text-2xl font-bold">Apple iPhone 14 Pro Max</h1>
                     <div className="flex items-center">
-                        <span className="text-2xl font-semibold text-black">$1399</span>
+                        <span className="text-2xl font-semibold text-black">${price}</span>
                         <span className="text-sm line-through text-gray-400 ml-2">$1499</span></div>
                     <div>
                         <p className="font-semibold">Select color:</p>
@@ -71,12 +71,12 @@ export default async function ProductDetailPage({ params }: { params: { slug: st
                     </p>
 
                     {/* Actions */}
-                    <div className="flex space-x-4">
-                        <button className="cursor-pointer w-1/2 px-0 py-4 rounded border flex items-center justify-center">
+                    <div className="flex flex-col gap-2 lg:flex lg:flex-row lg:gap-0 space-x-4">
+                        <button className="cursor-pointer w-full lg:w-1/2 px-0 py-4 rounded border flex items-center justify-center">
                             <Heart className="w-5 h-5 mx-2 my-0" />
                             <span>Add to Wishlist</span>
                         </button>
-                        <button className="cursor-pointer w-1/2 px-0 py-4 rounded bg-black text-white flex items-center justify-center">
+                        <button className="cursor-pointer w-full lg:w-1/2 px-0 py-4 rounded bg-black text-white flex items-center justify-center">
                             <ShoppingCart className="w-5 h-5 mx-2 my-0" />
                             <span>Add to Cart</span>
                         </button>
